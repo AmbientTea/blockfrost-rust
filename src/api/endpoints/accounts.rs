@@ -167,7 +167,8 @@ mod tests {
             "treasury_sum": "12000000",
             "withdrawable_amount": "319154618165",
             "pool_id": "pool1pu5jlj4q9w9jlxeu370a3c9myx47md5j5m2str0naunn2q3lkdy",
-            "drep_id": "drep124w9k5ml25kcshqet8r3g2pwk6kqdhj79thg2rphf5u5urve0an"
+            "drep_id": "drep124w9k5ml25kcshqet8r3g2pwk6kqdhj79thg2rphf5u5urve0an",
+            "registered": true
         });
 
         serde_json::from_value::<AccountContent>(json_value).unwrap();
@@ -230,13 +231,19 @@ mod tests {
                 "active_epoch": 210,
                 "tx_hash": "2dd15e0ef6e6a17841cb9541c27724072ce4d4b79b91e58432fbaa32d9572531",
                 "amount": "12695385",
-                "pool_id": "pool1pu5jlj4q9w9jlxeu370a3c9myx47md5j5m2str0naunn2q3lkdy"
+                "pool_id": "pool1pu5jlj4q9w9jlxeu370a3c9myx47md5j5m2str0naunn2q3lkdy",
+                "tx_slot": 42000000,
+                "block_time": 1635505891,
+                "block_height": 69
             },
             {
                 "active_epoch": 242,
                 "tx_hash": "1a0570af966fb355a7160e4f82d5a80b8681b7955f5d44bec0dde628516157f0",
                 "amount": "12691385",
-                "pool_id": "pool1kchver88u3kygsak8wgll7htr8uxn5v35lfrsyy842nkscrzyvj"
+                "pool_id": "pool1kchver88u3kygsak8wgll7htr8uxn5v35lfrsyy842nkscrzyvj",
+                "tx_slot": 43000000,
+                "block_time": 1635505892,
+                "block_height": 70
             }
         ]);
 
@@ -248,11 +255,17 @@ mod tests {
         let json_value = json!([
             {
                 "tx_hash": "2dd15e0ef6e6a17841cb9541c27724072ce4d4b79b91e58432fbaa32d9572531",
-                "action": "registered"
+                "action": "registered",
+                "tx_slot": 42000000,
+                "block_time": 1635505891,
+                "block_height": 69
             },
             {
                 "tx_hash": "1a0570af966fb355a7160e4f82d5a80b8681b7955f5d44bec0dde628516157f0",
-                "action": "deregistered"
+                "action": "deregistered",
+                "tx_slot": 43000000,
+                "block_time": 1635505892,
+                "block_height": 70
             }
         ]);
 
@@ -264,11 +277,17 @@ mod tests {
         let json_value = json!([
             {
                 "tx_hash": "48a9625c841eea0dd2bb6cf551eabe6523b7290c9ce34be74eedef2dd8f7ecc5",
-                "amount": "454541212442"
+                "amount": "454541212442",
+                "tx_slot": 42000000,
+                "block_time": 1635505891,
+                "block_height": 69
             },
             {
                 "tx_hash": "4230b0cbccf6f449f0847d8ad1d634a7a49df60d8c142bb8cc2dbc8ca03d9e34",
-                "amount": "97846969"
+                "amount": "97846969",
+                "tx_slot": 43000000,
+                "block_time": 1635505892,
+                "block_height": 70
             }
         ]);
 
@@ -280,11 +299,17 @@ mod tests {
         let json_value = json!([
             {
                 "tx_hash": "48a9625c841eea0dd2bb6cf551eabe6523b7290c9ce34be74eedef2dd8f7ecc5",
-                "amount": "454541212442"
+                "amount": "454541212442",
+                "tx_slot": 42000000,
+                "block_time": 1635505891,
+                "block_height": 69
             },
             {
                 "tx_hash": "4230b0cbccf6f449f0847d8ad1d634a7a49df60d8c142bb8cc2dbc8ca03d9e34",
-                "amount": "97846969"
+                "amount": "97846969",
+                "tx_slot": 43000000,
+                "block_time": 1635505892,
+                "block_height": 70
             }
         ]);
 

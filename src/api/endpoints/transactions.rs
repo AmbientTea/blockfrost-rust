@@ -177,7 +177,8 @@ mod tests {
             "pool_retire_count": 0,
             "asset_mint_or_burn_count": 0,
             "redeemer_count": 0,
-            "valid_contract": false
+            "valid_contract": false,
+            "treasury_donation": "0"
         });
         serde_json::from_value::<TxContent>(json_value).unwrap();
     }
@@ -215,7 +216,8 @@ mod tests {
             "pool_retire_count": 0,
             "asset_mint_or_burn_count": 1,
             "redeemer_count": 0,
-            "valid_contract": true
+            "valid_contract": true,
+            "treasury_donation": "0"
         });
         serde_json::from_value::<TxContent>(json_value).unwrap();
     }
