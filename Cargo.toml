@@ -13,7 +13,7 @@ homepage = "https://blockfrost.io"
 blockfrost-openapi = "0.1.86"
 futures = "0.3.31"
 futures-timer = "3.0.3"
-reqwest = { version = "0.12.9", default-features = false, features = [
+reqwest = { version = "0.12.28", default-features = false, features = [
     "http2",
     "charset",
     "macos-system-configuration",
