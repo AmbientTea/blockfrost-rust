@@ -10,15 +10,15 @@ repository = "https://github.com/blockfrost/blockfrost-rust"
 homepage = "https://blockfrost.io"
 
 [dependencies]
-blockfrost-openapi = "0.1.86"
+blockfrost-openapi = { version = "0.1.87", default-features = false }
 futures = "0.3.31"
 futures-timer = "3.0.3"
-reqwest = { version = "0.12.9", default-features = false, features = [
+reqwest = { version = "0.13.2", default-features = false, features = [
     "http2",
     "charset",
-    "macos-system-configuration",
     "multipart",
     "json",
+    "system-proxy",
 ] }
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
@@ -32,11 +32,15 @@ tokio = { version = "1.49.0", features = ["macros", "rt-multi-thread"] }
 
 [features]
 default = ["default-tls"]
-default-tls = ["reqwest/default-tls"]
-rustls-tls = ["reqwest/rustls-tls"]
-rustls-tls-manual-roots = ["reqwest/rustls-tls-manual-roots"]
-rustls-tls-webpki-roots = ["reqwest/rustls-tls-webpki-roots"]
-rustls-tls-native-roots = ["reqwest/rustls-tls-native-roots"]
+default-tls = ["reqwest/default-tls", "blockfrost-openapi/rustls"]
+native-tls = ["reqwest/native-tls", "blockfrost-openapi/native-tls"]
+rustls = ["reqwest/rustls"]
+
+# deprecated features: use rustls instead, remove those features while bumping major versions.
+rustls-tls = ["rustls"]
+rustls-tls-manual-roots = ["rustls"]
+rustls-tls-webpki-roots = ["rustls"]
+rustls-tls-native-roots = ["rustls"]
 
 [lints.clippy]
 uninlined_format_args = "deny"
